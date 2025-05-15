@@ -1,16 +1,21 @@
 import React from "react";
 import { easeIn, motion } from "framer-motion";
+import { Link, useNavigate } from "react-router-dom";
 
 function ContactUs() {
+    const nav = useNavigate()
+    const handleClick =()=>{
+        nav('/reservation')
+    }
   return (
     <>
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="px-4 md:px-10 lg:px-20 pt-20"
+        className="px-4 md:px-10 lg:px-20 pt-20 pb-20"
       >
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-left pb-10">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-left pb-20">
           Visit Us & Book a Table
         </h2>
 
@@ -68,12 +73,13 @@ function ContactUs() {
             </ul>
 
             <div className="flex flex-wrap justify-start gap-4 pt-8">
-              <button className="bg-black text-white px-6 py-3 rounded-3xl font-semibold">
+              <button onClick={handleClick} className="bg-black text-white px-6 py-3 rounded-3xl font-semibold cursor-pointer">
                 Book Table
               </button>
-              <button className="border border-black text-black px-6 py-3 rounded-3xl font-semibold">
+             <Link to='/menu'>
+              <button className="border border-black text-black cursor-pointer px-6 py-3 rounded-3xl font-semibold">
                 Explore Menu
-              </button>
+              </button></Link>
             </div>
           </motion.div>
         </motion.div>

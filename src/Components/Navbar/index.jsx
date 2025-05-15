@@ -27,7 +27,7 @@ function Navbar({ scrollToMenu }) {
   return (
     <>
       <motion.div
-        className="z-50 fixed top-0 left-0 right-0 backdrop-blur bg-[rgba(255,255,255,0.6)] h-[80px] w-full border-b-2 border-[rgb(243,255,207)]"
+        className="z-50 fixed top-0 left-0 right-0 backdrop-blur bg-[rgba(255,255,255,0.6)] h-[90px] w-full border-b-2 border-[rgb(243,255,207)]"
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: isHidden ? -100 : 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.34, 1.09, 0.64, 1] }}
@@ -38,9 +38,9 @@ function Navbar({ scrollToMenu }) {
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-12">
-            <ul className="flex gap-8 font-medium text-base">
-  <Link to='/menu'  onClick={() => setIsMobileMenuOpen(false)}> <li>
+          <div className="hidden md:flex items-center gap-15">
+            <ul className="flex gap-15 font-medium text-base">
+  <Link to='/menu'  onClick={() => setIsMobileMenuOpen(false)}> <li className='text-md'>
                 Menu
               </li></Link>
                             <Link to="/blog"><li className="hover:underline cursor-pointer">News</li></Link>
@@ -50,7 +50,7 @@ function Navbar({ scrollToMenu }) {
               <motion.button
                 whileHover={{ scale: 0.97 }}
                 transition={{ type: 'spring', stiffness: 200, damping: 15 }}
-                className="text-white text-sm font-semibold bg-black px-5 py-2.5 rounded-full"
+                className="text-white text-md font-semibold bg-black px-9 py-4 rounded-full"
               >
                 Book Table
               </motion.button>
@@ -82,6 +82,7 @@ function Navbar({ scrollToMenu }) {
       {/* Fullscreen Slide-in Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
+          
           <motion.div
             key="mobileMenu"
             initial={{ x: '100%' }}
@@ -90,12 +91,13 @@ function Navbar({ scrollToMenu }) {
             transition={{ type: 'tween', ease: 'easeInOut', duration: 0.5 }}
             className="fixed top-0 right-0 w-full h-screen bg-white z-40 flex flex-col items-center justify-center px-8"
           >
+            
             <ul className="space-y-8 text-center text-2xl font-semibold">
-             <Link to='/menu'  onClick={() => setIsMobileMenuOpen(false)}> <li>
+             <Link to='/menu'  onClick={() => setIsMobileMenuOpen(false)}> <li className='pb-5'>
                 Menu
               </li></Link>
               <Link to="/blog" onClick={() => setIsMobileMenuOpen(false)}>
-                <li>News</li>
+                <li className='pb-5'>News</li>
               </Link>
               <Link to="/reservation" onClick={() => setIsMobileMenuOpen(false)}>
                 <li className="bg-black text-white px-6 py-3 rounded-full mt-4">Book Table</li>
