@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.slick-arrow .slick-prev{
+    color: black !important;
+}
+.slick-arrow .slick-prev{
+    color: black !important;
+}
+
+.slick-prev:before, .slick-next:before{
+     font-family: 'slick';
+    font-size: 20px !important;
+    width: 50px !important;
+    height: 50px !important;
+    padding: 10px;
+    background-color: #c5fd1b;
+    line-height: 1;
+    opacity: 1 !important;
+    z-index: 100 !important;
+    color:black !important;
+    /* color: black !important; */
+    border-radius: 50%;
+    -webkit-font-smoothing: antialiased;
+}
+.slick-slide {
+    z-index: 0 !important;
+}
+.slick-slide .slick-active .slick-current{
+    z-index: 0 !important;
+}
+.slick-prev:after, .slick-next:before{
+    font-family: 'slick';
+    font-size: 20px !important;
+    width: 50px !important;
+    height: 5px !important;
+    
+    padding: 10px;
+    background-color: #c5fd1b;
+    line-height: 1;
+     opacity: 1 !important;
+     z-index: 100 !important;
+    color:black !important;
+    /* color: black !important; */
+    border-radius: 50%;
+    -webkit-font-smoothing: antialiased;
+}
+
+.slick-prev, .slick-next {
+  z-index: 50 !important;
+  position: absolute !important;
+  top:60% !important;
+  transform: translateY(-50%);
+  background-color: #c5fd1b !important;
+  border-radius: 50% !important;
+  width: 50px;
+  height: 45px ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+}
+
+.slick-prev {
+  left: 35px !important;
+}
+
+.slick-next {
+  right: 55px !important;
+}
+
+.slick-prev:before, .slick-next:before {
+  font-size: 24px !important;
+  color: black !important;
+  opacity: 1 !important;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+  overflow: clip;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain !important;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+.lenis.lenis-autoToggle {
+  transition-property: overflow;
+  transition-duration: 1ms;
+  transition-behavior: allow-discrete;
+}
+/* For Chrome, Edge, and Safari */
+::-webkit-scrollbar {
+  width: 8px; /* Width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #d9fa74; /* Color of the tracking area */
+}
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: #000000; /* Color of the scroll thumb */
+  border-radius: 5px; /* Roundness of the scroll thumb */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #000000;
+}
+
+/* For Firefox */
+/* You might need to enable this in Firefox settings (about:config, set widget.non-native-theme.enabled to true) */
+ body {
+  scrollbar-width: auto; /* "auto" or "thin" */
+  scrollbar-color: #000000 #f1f1f1; /* thumb and track color */
+} 
